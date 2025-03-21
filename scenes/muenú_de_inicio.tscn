@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cafljq7j5mqh1"]
+[gd_scene load_steps=55 format=3 uid="uid://cafljq7j5mqh1"]
 
 [ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_tmb0x"]
 [ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://images/fondos/Fondo1.jpeg" id="2_n1v3u"]
@@ -426,6 +426,12 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_1yn2w"]
 font_size = 25
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhca"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpnct"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="Muenú de inicio" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -508,17 +514,17 @@ sprite_frames = SubResource("SpriteFrames_h01us")
 animation = &"normal"
 
 [node name="Tecla_derecha" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(651, 550)
+position = Vector2(651, 490)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("3_78l4b")
 
 [node name="Tecla_izquierda" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(500, 550)
+position = Vector2(500, 490)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_8y2r4")
 
 [node name="Tecla_arriba" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(575, 478)
+position = Vector2(575, 420)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_traae")
 
@@ -546,9 +552,24 @@ offset_right = 8.448
 offset_bottom = 8.248
 theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
 text = "← VOLVER"
+
+[node name="replay" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_left = 448.0
+offset_top = 576.0
+offset_right = 616.448
+offset_bottom = 584.248
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
+text = " ▶ REPLAY"
 
 [connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/INSTRUCTIONS" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="VBoxContainer/ABOUT US" to="." method="_on_about_us_pressed"]
 [connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/replay" to="." method="_on_replay_pressed"]

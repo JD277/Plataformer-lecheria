@@ -19,3 +19,7 @@ func _on_about_us_pressed():
 
 func reproducir_animaciones():
 	$CanvasLayer/AnimationPlayer.play("RESET")
+
+
+func _on_replay_pressed():
+	$CanvasLayer/AnimationPlayer.play("RESET")

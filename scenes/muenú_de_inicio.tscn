@@ -478,12 +478,12 @@ theme_override_constants/separation = 9
 [node name="START" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "START"
+text = " ▶  JUGAR"
 
 [node name="INSTRUCTIONS" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "INSTRUCTIONS"
+text = "INSTRUCCIONES"
 
 [node name="ABOUT US" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -566,7 +566,7 @@ offset_bottom = 584.248
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
-text = " ▶ REPLAY"
+text = " ▶ VOLVER A REPRODUCIR"
 
 [connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/INSTRUCTIONS" to="." method="_on_instructions_pressed"]

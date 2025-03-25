@@ -1,15 +1,17 @@
-[gd_scene load_steps=55 format=3 uid="uid://cafljq7j5mqh1"]
+[gd_scene load_steps=58 format=3 uid="uid://cafljq7j5mqh1"]
 
 [ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_tmb0x"]
-[ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://images/fondos/Fondo1.jpeg" id="2_n1v3u"]
-[ext_resource type="Texture2D" uid="uid://b7tv7jip45h5v" path="res://images/Teclas/teclas derecha.png" id="3_78l4b"]
-[ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://images/Virtual Guy/Run (32x32).png" id="3_bvvgs"]
-[ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://images/Virtual Guy/Run izquierda (32x32).png" id="4_2ymyv"]
-[ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://images/Virtual Guy/Fall (32x32).png" id="4_5li23"]
-[ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://images/Teclas/teclas izquierda.png" id="4_8y2r4"]
-[ext_resource type="Texture2D" uid="uid://ifki3x6ux0xi" path="res://images/Virtual Guy/Idle (32x32).png" id="5_1ywaj"]
-[ext_resource type="Texture2D" uid="uid://dwact241dveu3" path="res://images/Teclas/teclas arriba.png" id="5_traae"]
-[ext_resource type="Texture2D" uid="uid://do4672hixworr" path="res://images/Virtual Guy/Jump (32x32).png" id="6_hfhqu"]
+[ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_n1v3u"]
+[ext_resource type="Texture2D" uid="uid://b7tv7jip45h5v" path="res://recursos/images/Teclas/teclas derecha.png" id="3_78l4b"]
+[ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://recursos/images/Virtual Guy/Run (32x32).png" id="3_bvvgs"]
+[ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://recursos/images/Virtual Guy/Run izquierda (32x32).png" id="4_2ymyv"]
+[ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://recursos/images/Virtual Guy/Fall (32x32).png" id="4_5li23"]
+[ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://recursos/images/Teclas/teclas izquierda.png" id="4_8y2r4"]
+[ext_resource type="Texture2D" uid="uid://ifki3x6ux0xi" path="res://recursos/images/Virtual Guy/Idle (32x32).png" id="5_1ywaj"]
+[ext_resource type="Texture2D" uid="uid://dwact241dveu3" path="res://recursos/images/Teclas/teclas arriba.png" id="5_traae"]
+[ext_resource type="Texture2D" uid="uid://do4672hixworr" path="res://recursos/images/Virtual Guy/Jump (32x32).png" id="6_hfhqu"]
+[ext_resource type="Texture2D" uid="uid://bh8r42auoxjlo" path="res://recursos/images/fondos/job-5382501_1920.jpg" id="11_6ghyh"]
+[ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="11_qqhdn"]
 
 [sub_resource type="Animation" id="Animation_qfxp2"]
 length = 7.5
@@ -424,13 +426,21 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yn2w"]
-font_size = 25
+font_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhca"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpnct"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcpbx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.00392157)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0.766407, 0.473661, 0.320797, 1)
 
 [node name="Muenú de inicio" type="Control"]
 layout_mode = 3
@@ -441,7 +451,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tmb0x")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="fondo" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -450,7 +460,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0.00784314, 0.341176)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="imagen de fondo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -490,10 +500,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SOBRE NOSOTROS"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Instrucciones" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Instrucciones"]
 modulate = Color(0, 0, 0, 0.807843)
 anchors_preset = 15
 anchor_right = 1.0
@@ -502,33 +512,34 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Instrucciones"]
 libraries = {
 "": SubResource("AnimationLibrary_7u2xx")
 }
 
-[node name="Movimiento_derecha" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="Movimiento_derecha" type="AnimatedSprite2D" parent="Instrucciones"]
+texture_filter = 1
 position = Vector2(471, 172)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_h01us")
 animation = &"normal"
 
-[node name="Tecla_derecha" type="Sprite2D" parent="CanvasLayer"]
+[node name="Tecla_derecha" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(651, 490)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("3_78l4b")
 
-[node name="Tecla_izquierda" type="Sprite2D" parent="CanvasLayer"]
+[node name="Tecla_izquierda" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(500, 490)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_8y2r4")
 
-[node name="Tecla_arriba" type="Sprite2D" parent="CanvasLayer"]
+[node name="Tecla_arriba" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(575, 420)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_traae")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="Instrucciones"]
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.458
@@ -542,7 +553,7 @@ label_settings = SubResource("LabelSettings_1yn2w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="close" type="Button" parent="CanvasLayer"]
+[node name="salir_Intrucciones" type="Button" parent="Instrucciones"]
 anchors_preset = -1
 anchor_right = 0.076
 anchor_bottom = 0.049
@@ -555,7 +566,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
 text = "← VOLVER"
 
-[node name="replay" type="Button" parent="CanvasLayer"]
+[node name="replay" type="Button" parent="Instrucciones"]
 anchors_preset = -1
 anchor_right = 0.076
 anchor_bottom = 0.049
@@ -568,8 +579,72 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
 text = " ▶ VOLVER A REPRODUCIR"
 
+[node name="Sobre Nosotros" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Sobre Nosotros"]
+modulate = Color(0, 0, 0, 0.807843)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Tecla_arriba" type="Sprite2D" parent="Sobre Nosotros"]
+position = Vector2(576, 160.275)
+scale = Vector2(0.245833, 0.221929)
+texture = ExtResource("11_6ghyh")
+
+[node name="Panel" type="Panel" parent="Sobre Nosotros/Tecla_arriba"]
+offset_left = -976.0
+offset_top = -609.494
+offset_right = 977.0
+offset_bottom = 580.506
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcpbx")
+
+[node name="Label" type="Label" parent="Sobre Nosotros"]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.506
+anchor_right = 0.757
+anchor_bottom = 0.741
+offset_left = -8.0
+offset_top = 0.111969
+offset_right = -7.06409
+offset_bottom = -0.16803
+text = "Adakademy, la Alcaldia de lecheria y nosotros creamos una propuesta innovadora para agregar valor a nuestro municipio y darle vida al mismo a traves de nuestro juego e historia. Bienvenido a: 
+\"Un paseo por lecheria: un videojuego con proposito\""
+label_settings = SubResource("LabelSettings_1yn2w")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="salir_SobreNosotros" type="Button" parent="Sobre Nosotros"]
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_top = 8.0
+offset_right = 0.447998
+offset_bottom = 8.248
+theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
+text = "← VOLVER"
+
+[node name="entrada" parent="." instance=ExtResource("11_qqhdn")]
+visible = false
+
+[node name="salida" parent="." instance=ExtResource("11_qqhdn")]
+visible = false
+
+[node name="stop" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/INSTRUCTIONS" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="VBoxContainer/ABOUT US" to="." method="_on_about_us_pressed"]
-[connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="CanvasLayer/replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Instrucciones/salir_Intrucciones" to="." method="_on_salir_intrucciones_pressed"]
+[connection signal="pressed" from="Instrucciones/replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Sobre Nosotros/salir_SobreNosotros" to="." method="_on_salir_sobre_nosotros_pressed"]

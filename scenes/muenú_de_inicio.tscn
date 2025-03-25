@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cafljq7j5mqh1"]
+[gd_scene load_steps=60 format=3 uid="uid://cafljq7j5mqh1"]
 
 [ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_tmb0x"]
 [ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_n1v3u"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://do4672hixworr" path="res://recursos/images/Virtual Guy/Jump (32x32).png" id="6_hfhqu"]
 [ext_resource type="Texture2D" uid="uid://bh8r42auoxjlo" path="res://recursos/images/fondos/job-5382501_1920.jpg" id="11_6ghyh"]
 [ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="11_qqhdn"]
+[ext_resource type="Texture2D" uid="uid://pysss7bm1cmb" path="res://recursos/images/logos/ADAKADEMY TEXTO BLANCO.png" id="12_6ny0o"]
+[ext_resource type="Texture2D" uid="uid://4a8nkq00uvxg" path="res://recursos/images/logos/logo lecheria sin fondo.png" id="13_ns2eo"]
 
 [sub_resource type="Animation" id="Animation_qfxp2"]
 length = 7.5
@@ -632,6 +634,18 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
 text = "← VOLVER"
 
+[node name="logo_Adakademy" type="Sprite2D" parent="Sobre Nosotros"]
+texture_filter = 1
+position = Vector2(91, 608)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("12_6ny0o")
+
+[node name="logo_AlcaldíaLechería" type="Sprite2D" parent="Sobre Nosotros"]
+texture_filter = 1
+position = Vector2(1072, 584)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_ns2eo")
+
 [node name="entrada" parent="." instance=ExtResource("11_qqhdn")]
 visible = false
 
@@ -640,6 +654,18 @@ visible = false
 
 [node name="stop" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="logo_Adakademy" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 39.9999)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("12_6ny0o")
+
+[node name="logo_AlcaldíaLechería" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1080, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_ns2eo")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]

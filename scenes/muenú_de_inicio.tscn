@@ -1,9 +1,11 @@
-[gd_scene load_steps=60 format=3 uid="uid://cafljq7j5mqh1"]
+[gd_scene load_steps=66 format=3 uid="uid://cafljq7j5mqh1"]
 
 [ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_tmb0x"]
 [ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_n1v3u"]
+[ext_resource type="FontFile" uid="uid://bhbif6yu8rwv1" path="res://recursos/fuentes/Elegant-Z1Km.ttf" id="3_1n5u6"]
 [ext_resource type="Texture2D" uid="uid://b7tv7jip45h5v" path="res://recursos/images/Teclas/teclas derecha.png" id="3_78l4b"]
 [ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://recursos/images/Virtual Guy/Run (32x32).png" id="3_bvvgs"]
+[ext_resource type="FontFile" uid="uid://tt7cy7nnrery" path="res://recursos/fuentes/TravelelegantLight-RpwMV.otf" id="3_y2juk"]
 [ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://recursos/images/Virtual Guy/Run izquierda (32x32).png" id="4_2ymyv"]
 [ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://recursos/images/Virtual Guy/Fall (32x32).png" id="4_5li23"]
 [ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://recursos/images/Teclas/teclas izquierda.png" id="4_8y2r4"]
@@ -14,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="11_qqhdn"]
 [ext_resource type="Texture2D" uid="uid://pysss7bm1cmb" path="res://recursos/images/logos/ADAKADEMY TEXTO BLANCO.png" id="12_6ny0o"]
 [ext_resource type="Texture2D" uid="uid://4a8nkq00uvxg" path="res://recursos/images/logos/logo lecheria sin fondo.png" id="13_ns2eo"]
+[ext_resource type="FontFile" uid="uid://ci26yaceyo6te" path="res://recursos/fuentes/ElegantLady-d9pPV.otf" id="16_j3i6l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdim2"]
+font = ExtResource("3_y2juk")
+font_size = 30
 
 [sub_resource type="Animation" id="Animation_qfxp2"]
 length = 7.5
@@ -444,6 +451,20 @@ border_width_right = 25
 border_width_bottom = 25
 border_color = Color(0.766407, 0.473661, 0.320797, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pq1ln"]
+font = ExtResource("16_j3i6l")
+font_size = 90
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qrjn"]
+font = ExtResource("3_1n5u6")
+font_size = 40
+font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Muenú de inicio" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -479,28 +500,60 @@ anchor_left = 0.497
 anchor_top = 0.684
 anchor_right = 0.497
 anchor_bottom = 0.684
-offset_left = -168.544
-offset_top = -87.232
-offset_right = 167.456
-offset_bottom = 87.768
+offset_left = -180.544
+offset_top = -84.232
+offset_right = 204.456
+offset_bottom = 90.768
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 9
+metadata/_edit_group_ = true
 
 [node name="START" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = " ▶  JUGAR"
+text = " 
+"
+
+[node name="Label" type="Label" parent="VBoxContainer/START"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 1.0
+offset_right = 369.0
+offset_bottom = 58.0
+text = "JUGAR"
+label_settings = SubResource("LabelSettings_rdim2")
+horizontal_alignment = 1
 
 [node name="INSTRUCTIONS" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+text = " "
+
+[node name="Label" type="Label" parent="VBoxContainer/INSTRUCTIONS"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 1.0
+offset_right = 361.0
+offset_bottom = 58.0
 text = "INSTRUCCIONES"
+label_settings = SubResource("LabelSettings_rdim2")
+horizontal_alignment = 1
 
 [node name="ABOUT US" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+text = " "
+
+[node name="Label" type="Label" parent="VBoxContainer/ABOUT US"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 367.0
+offset_bottom = 58.0
 text = "SOBRE NOSOTROS"
+label_settings = SubResource("LabelSettings_rdim2")
+horizontal_alignment = 1
 
 [node name="Instrucciones" type="CanvasLayer" parent="."]
 visible = false
@@ -582,10 +635,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
 text = " ▶ VOLVER A REPRODUCIR"
 
 [node name="Sobre Nosotros" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Sobre Nosotros"]
-modulate = Color(0, 0, 0, 0.807843)
+modulate = Color(0, 0, 0, 0.917647)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -593,12 +645,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="Tecla_arriba" type="Sprite2D" parent="Sobre Nosotros"]
+[node name="Imagen" type="Sprite2D" parent="Sobre Nosotros"]
 position = Vector2(576, 160.275)
 scale = Vector2(0.245833, 0.221929)
 texture = ExtResource("11_6ghyh")
 
-[node name="Panel" type="Panel" parent="Sobre Nosotros/Tecla_arriba"]
+[node name="Panel" type="Panel" parent="Sobre Nosotros/Imagen"]
 offset_left = -976.0
 offset_top = -609.494
 offset_right = 977.0
@@ -657,15 +709,34 @@ wait_time = 5.0
 
 [node name="logo_Adakademy" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(96, 39.9999)
+position = Vector2(1071, 33)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("12_6ny0o")
 
 [node name="logo_AlcaldíaLechería" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1080, 64)
+position = Vector2(74, 57)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_ns2eo")
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 159.0
+offset_right = 965.0
+offset_bottom = 279.0
+text = "Un paseo por Lechería"
+label_settings = SubResource("LabelSettings_pq1ln")
+
+[node name="Titulo2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 281.0
+offset_right = 960.0
+offset_bottom = 336.0
+text = "Un videjuego con propósito"
+label_settings = SubResource("LabelSettings_7qrjn")
+horizontal_alignment = 1
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]

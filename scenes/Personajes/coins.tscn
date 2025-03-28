@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4wk1g1pdje0r"]
+
+[ext_resource type="Texture2D" uid="uid://c141jwy1pakv0" path="res://recursos/images/diamond.png" id="1_gnbb3"]
+
+[node name="coins" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_gnbb3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.2517e-06, 0.486111)
+scale = Vector2(1.03365, 1.02778)
+polygon = PackedVector2Array(-13, -22, 13, -22, 26, -8, 0, 23, -26, -8)

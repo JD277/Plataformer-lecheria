@@ -1,25 +1,25 @@
 [gd_scene load_steps=66 format=3 uid="uid://cafljq7j5mqh1"]
 
-[ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_tmb0x"]
-[ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_n1v3u"]
-[ext_resource type="FontFile" uid="uid://bhbif6yu8rwv1" path="res://recursos/fuentes/Elegant-Z1Km.ttf" id="3_1n5u6"]
-[ext_resource type="Texture2D" uid="uid://b7tv7jip45h5v" path="res://recursos/images/Teclas/teclas derecha.png" id="3_78l4b"]
-[ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://recursos/images/Virtual Guy/Run (32x32).png" id="3_bvvgs"]
-[ext_resource type="FontFile" uid="uid://tt7cy7nnrery" path="res://recursos/fuentes/TravelelegantLight-RpwMV.otf" id="3_y2juk"]
-[ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://recursos/images/Virtual Guy/Run izquierda (32x32).png" id="4_2ymyv"]
-[ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://recursos/images/Virtual Guy/Fall (32x32).png" id="4_5li23"]
-[ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://recursos/images/Teclas/teclas izquierda.png" id="4_8y2r4"]
-[ext_resource type="Texture2D" uid="uid://ifki3x6ux0xi" path="res://recursos/images/Virtual Guy/Idle (32x32).png" id="5_1ywaj"]
-[ext_resource type="Texture2D" uid="uid://dwact241dveu3" path="res://recursos/images/Teclas/teclas arriba.png" id="5_traae"]
-[ext_resource type="Texture2D" uid="uid://do4672hixworr" path="res://recursos/images/Virtual Guy/Jump (32x32).png" id="6_hfhqu"]
-[ext_resource type="Texture2D" uid="uid://bh8r42auoxjlo" path="res://recursos/images/fondos/job-5382501_1920.jpg" id="11_6ghyh"]
-[ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="11_qqhdn"]
-[ext_resource type="Texture2D" uid="uid://pysss7bm1cmb" path="res://recursos/images/logos/ADAKADEMY TEXTO BLANCO.png" id="12_6ny0o"]
-[ext_resource type="Texture2D" uid="uid://4a8nkq00uvxg" path="res://recursos/images/logos/logo lecheria sin fondo.png" id="13_ns2eo"]
-[ext_resource type="FontFile" uid="uid://ci26yaceyo6te" path="res://recursos/fuentes/ElegantLady-d9pPV.otf" id="16_j3i6l"]
+[ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_khw0l"]
+[ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_qvsan"]
+[ext_resource type="FontFile" uid="uid://tt7cy7nnrery" path="res://recursos/fuentes/TravelelegantLight-RpwMV.otf" id="3_fqvud"]
+[ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://recursos/images/Virtual Guy/Run (32x32).png" id="4_dtelm"]
+[ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://recursos/images/Virtual Guy/Fall (32x32).png" id="5_qqm21"]
+[ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://recursos/images/Virtual Guy/Run izquierda (32x32).png" id="6_tsh1q"]
+[ext_resource type="Texture2D" uid="uid://ifki3x6ux0xi" path="res://recursos/images/Virtual Guy/Idle (32x32).png" id="7_utlyh"]
+[ext_resource type="Texture2D" uid="uid://do4672hixworr" path="res://recursos/images/Virtual Guy/Jump (32x32).png" id="8_w7s6r"]
+[ext_resource type="Texture2D" uid="uid://b7tv7jip45h5v" path="res://recursos/images/Teclas/teclas derecha.png" id="9_o1cc2"]
+[ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://recursos/images/Teclas/teclas izquierda.png" id="10_ye4dv"]
+[ext_resource type="Texture2D" uid="uid://dwact241dveu3" path="res://recursos/images/Teclas/teclas arriba.png" id="11_cqmc6"]
+[ext_resource type="Texture2D" uid="uid://bh8r42auoxjlo" path="res://recursos/images/fondos/job-5382501_1920.jpg" id="12_6nd3g"]
+[ext_resource type="Texture2D" uid="uid://pysss7bm1cmb" path="res://recursos/images/logos/ADAKADEMY TEXTO BLANCO.png" id="13_dejpi"]
+[ext_resource type="Texture2D" uid="uid://4a8nkq00uvxg" path="res://recursos/images/logos/logo lecheria sin fondo.png" id="14_aka0e"]
+[ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="15_dxc4o"]
+[ext_resource type="FontFile" uid="uid://ci26yaceyo6te" path="res://recursos/fuentes/ElegantLady-d9pPV.otf" id="16_081s2"]
+[ext_resource type="FontFile" uid="uid://bhbif6yu8rwv1" path="res://recursos/fuentes/Elegant-Z1Km.ttf" id="17_j0ffi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rdim2"]
-font = ExtResource("3_y2juk")
+font = ExtResource("3_fqvud")
 font_size = 30
 
 [sub_resource type="Animation" id="Animation_qfxp2"]
@@ -143,151 +143,151 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70w47"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d414y"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vvl2x"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvqhn"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xu58a"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebgxf"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7y4q"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45skv"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5e5ry"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ib3ss"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37xpf"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lheg5"]
-atlas = ExtResource("3_bvvgs")
+atlas = ExtResource("4_dtelm")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5deuc"]
-atlas = ExtResource("4_5li23")
+atlas = ExtResource("5_qqm21")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp3ff"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8khg"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu3wk"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suspt"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5phbu"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwq6h"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohjm4"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8xir"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5oxwe"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1dri"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6vwv"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa8cb"]
-atlas = ExtResource("4_2ymyv")
+atlas = ExtResource("6_tsh1q")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygky4"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o124r"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjgbj"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_woiy0"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17kqh"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o23md"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wv5p0"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bswii"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hofv"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_paju6"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jblvd"]
-atlas = ExtResource("5_1ywaj")
+atlas = ExtResource("7_utlyh")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfo1u"]
-atlas = ExtResource("6_hfhqu")
+atlas = ExtResource("8_w7s6r")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h01us"]
@@ -452,14 +452,14 @@ border_width_bottom = 25
 border_color = Color(0.766407, 0.473661, 0.320797, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq1ln"]
-font = ExtResource("16_j3i6l")
+font = ExtResource("16_081s2")
 font_size = 90
 font_color = Color(0, 0, 0, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7qrjn"]
-font = ExtResource("3_1n5u6")
+font = ExtResource("17_j0ffi")
 font_size = 40
 font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
 outline_size = 5
@@ -472,7 +472,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tmb0x")
+script = ExtResource("1_khw0l")
 
 [node name="fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -490,7 +490,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_n1v3u")
+texture = ExtResource("2_qvsan")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -582,17 +582,17 @@ animation = &"normal"
 [node name="Tecla_derecha" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(651, 490)
 scale = Vector2(0.38, 0.38)
-texture = ExtResource("3_78l4b")
+texture = ExtResource("9_o1cc2")
 
 [node name="Tecla_izquierda" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(500, 490)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_8y2r4")
+texture = ExtResource("10_ye4dv")
 
 [node name="Tecla_arriba" type="Sprite2D" parent="Instrucciones"]
 position = Vector2(575, 420)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_traae")
+texture = ExtResource("11_cqmc6")
 
 [node name="Label" type="Label" parent="Instrucciones"]
 anchors_preset = -1
@@ -635,6 +635,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
 text = " ▶ VOLVER A REPRODUCIR"
 
 [node name="Sobre Nosotros" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Sobre Nosotros"]
 modulate = Color(0, 0, 0, 0.917647)
@@ -648,7 +649,7 @@ size_flags_horizontal = 4
 [node name="Imagen" type="Sprite2D" parent="Sobre Nosotros"]
 position = Vector2(576, 160.275)
 scale = Vector2(0.245833, 0.221929)
-texture = ExtResource("11_6ghyh")
+texture = ExtResource("12_6nd3g")
 
 [node name="Panel" type="Panel" parent="Sobre Nosotros/Imagen"]
 offset_left = -976.0
@@ -690,18 +691,18 @@ text = "← VOLVER"
 texture_filter = 1
 position = Vector2(91, 608)
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("12_6ny0o")
+texture = ExtResource("13_dejpi")
 
 [node name="logo_AlcaldíaLechería" type="Sprite2D" parent="Sobre Nosotros"]
 texture_filter = 1
 position = Vector2(1072, 584)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_ns2eo")
+texture = ExtResource("14_aka0e")
 
-[node name="entrada" parent="." instance=ExtResource("11_qqhdn")]
+[node name="entrada" parent="." instance=ExtResource("15_dxc4o")]
 visible = false
 
-[node name="salida" parent="." instance=ExtResource("11_qqhdn")]
+[node name="salida" parent="." instance=ExtResource("15_dxc4o")]
 visible = false
 
 [node name="stop" type="Timer" parent="."]
@@ -711,13 +712,13 @@ wait_time = 5.0
 texture_filter = 1
 position = Vector2(1071, 33)
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("12_6ny0o")
+texture = ExtResource("13_dejpi")
 
 [node name="logo_AlcaldíaLechería" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(74, 57)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_ns2eo")
+texture = ExtResource("14_aka0e")
 
 [node name="Titulo" type="Label" parent="."]
 layout_mode = 0

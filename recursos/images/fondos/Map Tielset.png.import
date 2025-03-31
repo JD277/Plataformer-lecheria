@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yhfj8hdiy5c7"
-path="res://.godot/imported/Map Tielset.png-32b6ab70d8bc4471819173dba9db2136.ctex"
+uid="uid://dfodupo806r8k"
+path="res://.godot/imported/Map Tielset.png-cac50a0a3364653a635bb6c25e2b90a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Map Tielset.png"
-dest_files=["res://.godot/imported/Map Tielset.png-32b6ab70d8bc4471819173dba9db2136.ctex"]
+source_file="res://recursos/images/fondos/Map Tielset.png"
+dest_files=["res://.godot/imported/Map Tielset.png-cac50a0a3364653a635bb6c25e2b90a0.ctex"]
 
 [params]
 

@@ -24,6 +24,11 @@ func _physics_process(delta: float) -> void:
 		
 	velocity.x = direction.x * speed
 	
+	if velocity.x > 0:
+		$animaciones.flip_h = false  # Mirando a la derecha
+	elif velocity.x < 0:
+		$animaciones.flip_h = true   # Mirando a la izquierda
+	
 	update_animation()
 	move_and_slide()
 
@@ -38,7 +43,7 @@ func update_animation():
 		if Input.is_action_pressed("right"):
 			animation_player.play("right")
 		elif Input.is_action_pressed("left"):
-			animation_player.play("left")
+			animation_player.play("right")
 			
 	else:
 		animation_player.play("idle")

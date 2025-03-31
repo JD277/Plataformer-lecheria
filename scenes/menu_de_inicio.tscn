@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cafljq7j5mqh1"]
+[gd_scene load_steps=67 format=3 uid="uid://cafljq7j5mqh1"]
 
 [ext_resource type="Script" path="res://Scripts/muenú_de_inicio.gd" id="1_khw0l"]
 [ext_resource type="Texture2D" uid="uid://dme24if8kotc0" path="res://recursos/images/fondos/Fondo1.jpeg" id="2_qvsan"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b6vn6lpd75wol" path="res://recursos/images/Teclas/teclas izquierda.png" id="10_ye4dv"]
 [ext_resource type="Texture2D" uid="uid://dwact241dveu3" path="res://recursos/images/Teclas/teclas arriba.png" id="11_cqmc6"]
 [ext_resource type="Texture2D" uid="uid://bh8r42auoxjlo" path="res://recursos/images/fondos/job-5382501_1920.jpg" id="12_6nd3g"]
+[ext_resource type="FontFile" uid="uid://due24met2t0g4" path="res://recursos/fuentes/TravelelegantBold-nRaKV.otf" id="12_wigy6"]
 [ext_resource type="Texture2D" uid="uid://pysss7bm1cmb" path="res://recursos/images/logos/ADAKADEMY TEXTO BLANCO.png" id="13_dejpi"]
 [ext_resource type="Texture2D" uid="uid://4a8nkq00uvxg" path="res://recursos/images/logos/logo lecheria sin fondo.png" id="14_aka0e"]
 [ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="15_dxc4o"]
@@ -612,12 +613,13 @@ vertical_alignment = 1
 anchors_preset = -1
 anchor_right = 0.076
 anchor_bottom = 0.049
-offset_left = 8.0
+offset_left = 10.0
 offset_top = 8.0
-offset_right = 8.448
+offset_right = 26.448
 offset_bottom = 8.248
 theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_wigy6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
 text = "← VOLVER"
 
@@ -625,14 +627,15 @@ text = "← VOLVER"
 anchors_preset = -1
 anchor_right = 0.076
 anchor_bottom = 0.049
-offset_left = 448.0
-offset_top = 576.0
-offset_right = 616.448
-offset_bottom = 584.248
+offset_left = 433.0
+offset_top = 579.0
+offset_right = 635.448
+offset_bottom = 587.248
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_wigy6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bpnct")
-text = " ▶ VOLVER A REPRODUCIR"
+text = " VOLVER A REPRODUCIR"
 
 [node name="Sobre Nosotros" type="CanvasLayer" parent="."]
 visible = false
@@ -679,11 +682,13 @@ autowrap_mode = 2
 anchors_preset = -1
 anchor_right = 0.076
 anchor_bottom = 0.049
+offset_left = 11.0
 offset_top = 8.0
-offset_right = 0.447998
+offset_right = 27.448
 offset_bottom = 8.248
 theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_wigy6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhca")
 text = "← VOLVER"
 
@@ -735,7 +740,7 @@ offset_left = 216.0
 offset_top = 281.0
 offset_right = 960.0
 offset_bottom = 336.0
-text = "Un videjuego con propósito"
+text = "Un videojuego con propósito"
 label_settings = SubResource("LabelSettings_7qrjn")
 horizontal_alignment = 1
 

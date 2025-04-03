@@ -301,7 +301,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b78k"]
-size = Vector2(62, 6)
+size = Vector2(34, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwq76"]
 size = Vector2(93, 107)
@@ -315,12 +315,13 @@ script = ExtResource("1_x3slc")
 
 [node name="animaciones" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xvpyu")
 animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 57)
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_0b78k")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -328,7 +329,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 10.5)
+position = Vector2(1.19209e-07, 2)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_iwq76")
 
 [node name="diamantes" type="GridContainer" parent="."]
@@ -361,5 +363,6 @@ offset_bottom = 57.0
 theme_override_styles/background = SubResource("StyleBoxFlat_8kjtr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

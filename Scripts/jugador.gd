@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 200
-var jump_power = -600
+var jump_power = -400
 var gravity = 980
 var trash_collected = 0
 #@export var moneda_llena: Texture2D
@@ -68,23 +68,6 @@ func update_progress_bar():
 	else:
 		progress.add_theme_color_override("font_color", Color(0, 1, 0))  # Verde
 		
-	
-		
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

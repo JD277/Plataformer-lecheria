@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=3 uid="uid://b81v8chxb2yju"]
 
 [ext_resource type="Texture2D" uid="uid://ddlu8nw0c5ml4" path="res://recursos/images/Virtual Guy/Run (32x32).png" id="1_83we7"]
-[ext_resource type="Script" path="res://scenes/Personajes/jugador.gd" id="1_x3slc"]
+[ext_resource type="Script" path="res://Scripts/jugador.gd" id="1_x3slc"]
 [ext_resource type="Texture2D" uid="uid://cruq3ri4wswk0" path="res://recursos/images/Virtual Guy/Fall (32x32).png" id="2_wsm6r"]
 [ext_resource type="Texture2D" uid="uid://odov8crhfhev" path="res://recursos/images/Virtual Guy/Run izquierda (32x32).png" id="3_a2wxo"]
 [ext_resource type="Texture2D" uid="uid://ifki3x6ux0xi" path="res://recursos/images/Virtual Guy/Idle (32x32).png" id="4_uwagc"]
@@ -309,6 +309,7 @@ size = Vector2(93, 107)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kjtr"]
 
 [node name="Jugador" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_x3slc")

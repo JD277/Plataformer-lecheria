@@ -21,7 +21,7 @@ func _ready() -> void:
 	$stop.start()
 	await $stop.timeout
 	$salida.visible = false
-	get_tree().change_scene_to_file("res://scenes/juego.tscn")
+	get_tree().change_scene_to_file("res://scenes/Mapas/nivel_1.tscn")
 	
 # Muestra el texto poco a poco en la caja de texto 
 func mostrar_texto():

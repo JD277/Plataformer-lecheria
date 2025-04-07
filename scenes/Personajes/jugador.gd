@@ -44,6 +44,7 @@ func update_animation():
 		animation_player.play("idle")
 
 func _on_area_2d_body_entered(body):
+	print(body)
 	if body.is_in_group("objeto"):
 		trash_collected +=10
 		body.queue_free()

@@ -364,6 +364,6 @@ offset_bottom = 57.0
 theme_override_styles/background = SubResource("StyleBoxFlat_8kjtr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(10, 10)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

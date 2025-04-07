@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btca50822wk3g" path="res://recursos/images/fondos/Tiles_32-Spritesheet.png" id="2_qagp5"]
 [ext_resource type="PackedScene" uid="uid://b81v8chxb2yju" path="res://scenes/Personajes/jugador.tscn" id="3_7hkb2"]
 [ext_resource type="Texture2D" uid="uid://coo1xkgkjpvc7" path="res://recursos/images/fondos/Clouds/Clouds 2/3.png" id="3_tihmh"]
-[ext_resource type="Texture2D" uid="uid://ciutdt22sua6r" path="res://recursos/images/fondos/tilesetsand.png" id="4_01h55"]
+[ext_resource type="Texture2D" uid="uid://cxovpjjms4rjf" path="res://recursos/images/fondos/tilesetsand.png" id="4_01h55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm5dh"]
 texture = ExtResource("1_juvqf")

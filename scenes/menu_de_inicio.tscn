@@ -557,7 +557,6 @@ label_settings = SubResource("LabelSettings_rdim2")
 horizontal_alignment = 1
 
 [node name="Instrucciones" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Instrucciones"]
 modulate = Color(0, 0, 0, 0.807843)

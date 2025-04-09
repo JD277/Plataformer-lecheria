@@ -4,6 +4,7 @@ var speed = 200
 var jump_power = -400
 var gravity = 980
 var trash_collected = 0
+var trash_collected_maximos = 100
 #@export var moneda_llena: Texture2D
 @onready var animation_player = $animaciones
 
@@ -48,28 +49,57 @@ func update_animation():
 	else:
 		animation_player.play("idle")
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("objeto"):
+func _on_area_2d_body_entered(area):
+	print("📍 Área detectada: ", area.name, " (grupo: enemigo = ", area.is_in_group("enemigo"), ")")
+	if area.is_in_group("objeto"):
 		trash_collected +=10
-		body.queue_free()
+		area.queue_free()
 		$CanvasLayer/ProgressBar.value = trash_collected
 		update_progress_bar()
 		
+	
 func update_progress_bar():
+	#var progress = $CanvasLayer/ProgressBar
+	#var valor = progress.value
+	
+	#if valor <= 25:
+		#progress.add_theme_color_override("font_color", Color(1, 0, 0))  # Rojo
+	#elif valor <= 50:
+		#progress.add_theme_color_override("font_color", Color(1, 0.5, 0))  # Naranja
+	#elif valor <= 75:
+		#progress.add_theme_color_override("font_color", Color(1, 1, 0))  # Amarillo
+	#else:
+		#progress.add_theme_color_override("font_color", Color(0, 1, 0))  # Verde
+	
+	# Primero actualiza el valor del ProgressBar
 	var progress = $CanvasLayer/ProgressBar
 	var valor = progress.value
 	
+	# Crear un nuevo StyleBoxFlat para el fondo
+	var style_box = StyleBoxFlat.new()
+	
+	# Configurar el color según el valor
 	if valor <= 25:
-		progress.add_theme_color_override("font_color", Color(1, 0, 0))  # Rojo
+		style_box.bg_color = Color(1, 0, 0)    # Rojo
 	elif valor <= 50:
-		progress.add_theme_color_override("font_color", Color(1, 0.5, 0))  # Naranja
+		style_box.bg_color = Color(1, 0.5, 0)  # Naranja
 	elif valor <= 75:
-		progress.add_theme_color_override("font_color", Color(1, 1, 0))  # Amarillo
+		style_box.bg_color = Color(1, 1, 0)    # Amarillo
 	else:
-		progress.add_theme_color_override("font_color", Color(0, 1, 0))  # Verde
-		
-
-
+		style_box.bg_color = Color(0, 1, 0)    # Verde
+	
+	# Aplicar el estilo al fondo del ProgressBar
+	progress.add_theme_stylebox_override("fill", style_box)
+	
+#segundo nivel
+# funcion para restar pustos que es llamada dede el enemigo para su correcto funcionamiento
+func restar_puntos(cantidad):
+	trash_collected = trash_collected - cantidad
+	if trash_collected < 0:
+		trash_collected = 0
+	print("💥 Daño recibido: -", cantidad, " | trash_collected actuales: ", trash_collected)
+	$CanvasLayer/ProgressBar.value = trash_collected
+	update_progress_bar()
 
 
 

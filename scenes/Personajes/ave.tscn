@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwtgtpjiodtny"]
+[gd_scene load_steps=3 format=3 uid="uid://cwtgtpjiodtny"]
 
-[ext_resource type="Texture2D" uid="uid://1donge6d2h3a" path="res://recursos/images/guacamaya.png" id="1_6clf3"]
+[ext_resource type="Script" path="res://scenes/Personajes/macaw.gd" id="1_8boc2"]
+[ext_resource type="Texture2D" uid="uid://1donge6d2h3a" path="res://recursos/images/guacamaya.png" id="2_rb8jm"]
 
-[node name="macaw" type="CharacterBody2D"]
+[node name="ave" type="Area2D" groups=["enemigo"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_8boc2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_6clf3")
+texture = ExtResource("2_rb8jm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(16, -59, 23, -29, 23, -12, 26, -5, 34, -5, 44, -2, 47, 2, 47, 9, 41, 9, 34, 10, 56, 26, 58, 28, 75, 36, 81, 37, 86, 37, 88, 39, 86, 43, 75, 43, 79, 46, 78, 49, 71, 49, 67, 46, 70, 52, 67, 54, 60, 52, 58, 50, 58, 52, 51, 52, 48, 49, 48, 52, 42, 51, 39, 48, 36, 51, 33, 51, 32, 47, 29, 49, 27, 48, 27, 44, 25, 46, 20, 44, 19, 43, 15, 43, 13, 42, 11, 42, 10, 40, 8, 40, 8, 38, 6, 37, 5, 35, 4, 35, 3, 33, 1, 32, 1, 30, 0, 29, 0, 27, -1, 26, -2, 24, -14, 36, -19, 40, -21, 40, -25, 41, -30, 43, -34, 44, -39, 45, -44, 46, -49, 47, -54, 48, -55, 47, -53, 44, -57, 45, -71, 45, -71, 43, -65, 42, -85, 41, -86, 37, -84, 36, -72, 37, -72, 35, -55, 35, -58, 34, -59, 31, -45, 30, -46, 27, -34, 25, -37, 23, -25, 17, -25, 15, -8, 9, -11, 6, -11, 2, -11, -3, -10, -10, -9, -17, -8, -23, -7, -30, -4, -38, -1, -42, 1, -46, 2, -51, 3, -52, 5, -49, 6, -50, 6, -57, 7, -57, 11, -52, 11, -59, 13, -59, 14, -55)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -316,7 +316,7 @@ script = ExtResource("1_x3slc")
 
 [node name="animaciones" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_xvpyu")
 animation = &"fall"
 
@@ -364,6 +364,6 @@ offset_bottom = 57.0
 theme_override_styles/background = SubResource("StyleBoxFlat_8kjtr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(10, 10)
+zoom = Vector2(5, 5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

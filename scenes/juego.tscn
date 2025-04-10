@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bobs0yp3p8mgq"]
 
 [ext_resource type="Texture2D" uid="uid://dsuisq02e8uu6" path="res://recursos/images/fondos/39547b886e2c518abe91199ce75d1bd7.jpg" id="1_3maia"]
-[ext_resource type="Script" path="res://Scripts/juego.gd" id="1_oib4m"]
+[ext_resource type="Script" path="res://Scripts/nivel_1.gd" id="1_oib4m"]
 [ext_resource type="PackedScene" uid="uid://b81v8chxb2yju" path="res://scenes/Personajes/jugador.tscn" id="2_rwnyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqyj6"]

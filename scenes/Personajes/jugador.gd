@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
 var speed = 200
-var jump_power = -500
+@export var jump_power = -900
 var gravity = 980
 var trash_collected = 0
-#@export var moneda_llena: Texture2D
 @onready var animation_player = $animaciones
-
 
 func _physics_process(delta: float) -> void:
 	
@@ -50,6 +48,7 @@ func _on_area_2d_body_entered(body):
 		body.queue_free()
 		$CanvasLayer/ProgressBar.value = trash_collected
 		update_progress_bar()
+	
 		
 func update_progress_bar():
 	var progress = $CanvasLayer/ProgressBar
@@ -63,42 +62,3 @@ func update_progress_bar():
 		progress.add_theme_color_override("font_color", Color(1, 1, 0))  # Amarillo
 	else:
 		progress.add_theme_color_override("font_color", Color(0, 1, 0))  # Verde
-		
-	
-		
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#func add():
-	
-	#for diamante in $diamantes.get_children():
-		#if diamante.texture.get_path() == "res://icon.svg":
-			#diamante.texture = moneda_llena
-			#break

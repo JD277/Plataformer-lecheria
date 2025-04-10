@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var intentos = 3
 var speed = 200
 var jump_power = -400
 var gravity = 980
@@ -56,6 +56,14 @@ func _on_area_2d_body_entered(area):
 		area.queue_free()
 		$CanvasLayer/ProgressBar.value = trash_collected
 		update_progress_bar()
+	if body.name == "spikes" and get_parent().name == "Nivel1":
+		intentos -= 1
+		if intentos <= 0:
+			intentos = 3
+		get_parent().derrota(intentos, -5, 577)
+	if body.name == "water" and get_parent().name == "Nivel1":
+		pass
+		#get_tree().change_scene_to_file()
 		
 	
 func update_progress_bar():

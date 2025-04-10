@@ -56,14 +56,13 @@ func _on_area_2d_body_entered(area):
 		area.queue_free()
 		$CanvasLayer/ProgressBar.value = trash_collected
 		update_progress_bar()
-	if body.name == "spikes" and get_parent().name == "Nivel1":
+	if area.name == "spikes" and get_parent().name == "Nivel1":
 		intentos -= 1
 		if intentos <= 0:
 			intentos = 3
 		get_parent().derrota(intentos, -5, 577)
-	if body.name == "water" and get_parent().name == "Nivel1":
-		pass
-		#get_tree().change_scene_to_file()
+	if area.name == "water2":
+		get_tree().change_scene_to_file("res://scenes/Mapas/nivel_2.tscn")
 		
 	
 func update_progress_bar():

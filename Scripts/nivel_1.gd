@@ -16,7 +16,7 @@ func _on_timer_timeout() -> void:
 
 func _process(delta: float) -> void:
 	var basura = $Jugador/CanvasLayer/ProgressBar.value
-	if basura == 100: # lógica para pasar de nivel 
+	if basura == 10: # lógica para pasar de nivel 
 		$spikes.visible = false
 		$spikes.collision_enabled = false
 

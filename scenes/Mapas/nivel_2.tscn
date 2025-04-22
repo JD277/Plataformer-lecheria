@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dlaxl8trkobwf"]
+[gd_scene load_steps=34 format=4 uid="uid://dlaxl8trkobwf"]
 
 [ext_resource type="Script" path="res://Scripts/nivel_2.gd" id="1_7gmsv"]
 [ext_resource type="Texture2D" uid="uid://dn5yjbe5vbmhf" path="res://recursos/images/fondos/Sprite Sheet 1.png" id="1_xihyf"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cmbwtxvl2baxf" path="res://recursos/images/fondos/desertFoliage.png" id="5_gmx2r"]
 [ext_resource type="PackedScene" uid="uid://c0swsqchro41k" path="res://scenes/Personajes/trash.tscn" id="6_udkfo"]
 [ext_resource type="PackedScene" uid="uid://cwtgtpjiodtny" path="res://scenes/Personajes/ave.tscn" id="7_cemgt"]
+[ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="8_dm3f2"]
+[ext_resource type="FontFile" uid="uid://due24met2t0g4" path="res://recursos/fuentes/TravelelegantBold-nRaKV.otf" id="10_8tv1m"]
+[ext_resource type="FontFile" uid="uid://tt7cy7nnrery" path="res://recursos/fuentes/TravelelegantLight-RpwMV.otf" id="10_pwqe6"]
+[ext_resource type="FontFile" uid="uid://bhbif6yu8rwv1" path="res://recursos/fuentes/Elegant-Z1Km.ttf" id="11_0q660"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8w5t"]
 texture = ExtResource("2_l068s")
@@ -4496,7 +4500,257 @@ texture = ExtResource("2_l068s")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nbkth")
 
-[node name="nivel_2" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_xk6ph"]
+font = ExtResource("10_pwqe6")
+font_size = 70
+font_color = Color(0.677219, 0.0969151, 0.109664, 1)
+outline_size = 5
+outline_color = Color(0.678431, 0.0980392, 0.109804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aowav"]
+font = ExtResource("10_pwqe6")
+font_size = 70
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_pl48n"]
+font = ExtResource("11_0q660")
+font_size = 60
+outline_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6uf4"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5v4"]
+bg_color = Color(0.521141, 0.521141, 0.521141, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_lyha2"]
+resource_name = "Derrota definitiva"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/bgrect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667)]
+}
+
+[sub_resource type="Animation" id="Animation_gt787"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/game over:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game over/bgrect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game over/intentos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("game over/bgrect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("game over/Victoria:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7nn04"]
+resource_name = "VICTORIA"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/Victoria:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game over/intentos:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game over/bgrect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667)]
+}
+
+[sub_resource type="Animation" id="Animation_3q8vi"]
+resource_name = "Victoria definitiva"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/bgrect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667)]
+}
+
+[sub_resource type="Animation" id="Animation_txiv7"]
+resource_name = "derrota"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/game over:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game over/bgrect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.865)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game over/intentos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5f7m3"]
+resource_name = "derrota afuera"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/bgrect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game over/game over:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game over/intentos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oviva"]
+_data = {
+"Derrota definitiva": SubResource("Animation_lyha2"),
+"RESET": SubResource("Animation_gt787"),
+"VICTORIA": SubResource("Animation_7nn04"),
+"Victoria definitiva": SubResource("Animation_3q8vi"),
+"derrota": SubResource("Animation_txiv7"),
+"derrota afuera": SubResource("Animation_5f7m3")
+}
+
+[node name="Nivel2" type="Node2D"]
 script = ExtResource("1_7gmsv")
 
 [node name="fondo" type="TileMapLayer" parent="."]
@@ -4518,15 +4772,100 @@ tile_map_data = PackedByteArray("AAA2/7T/AwAAAAEAAAA2/7X/AwAAAAIAAAA2/7b/AwAAAAM
 tile_set = SubResource("TileSet_h2lyc")
 
 [node name="Jugador" parent="." instance=ExtResource("5_5xsb7")]
-position = Vector2(4, -1)
+position = Vector2(11, -1)
 
 [node name="trash" parent="." instance=ExtResource("6_udkfo")]
-position = Vector2(75, -2)
+position = Vector2(144, 24)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true
 
 [node name="ave" parent="." instance=ExtResource("7_cemgt")]
 
+[node name="salida" parent="." instance=ExtResource("8_dm3f2")]
+visible = false
+
+[node name="entrada" parent="." instance=ExtResource("8_dm3f2")]
+visible = false
+
+[node name="game over" type="CanvasLayer" parent="."]
+
+[node name="bgrect" type="ColorRect" parent="game over"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -16.0
+offset_right = 1169.0
+offset_bottom = 688.0
+color = Color(0, 0, 0, 1)
+
+[node name="game over" type="Label" parent="game over"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 215.0
+offset_top = 162.0
+offset_right = 981.0
+offset_bottom = 255.0
+text = "¡ HAZ  PERDIDO !"
+label_settings = SubResource("LabelSettings_xk6ph")
+
+[node name="Victoria" type="Label" parent="game over"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 137.0
+offset_right = 948.0
+offset_bottom = 269.0
+text = "¡HAZ  GANADO !"
+label_settings = SubResource("LabelSettings_aowav")
+
+[node name="intentos" type="Label" parent="game over"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 127.0
+offset_top = 272.0
+offset_right = 1037.0
+offset_bottom = 469.0
+label_settings = SubResource("LabelSettings_pl48n")
+horizontal_alignment = 1
+
+[node name="Continuar" type="Button" parent="game over"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_left = 464.0
+offset_top = 480.0
+offset_right = 601.448
+offset_bottom = 488.248
+theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8tv1m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c6uf4")
+text = "CONTINUAR"
+
+[node name="Ir a Inicio" type="Button" parent="game over"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_left = 432.0
+offset_top = 536.0
+offset_right = 634.448
+offset_bottom = 544.248
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_8tv1m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ta5v4")
+text = " VOLVER A INICIO"
+
+[node name="stop" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="stopGameover" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="animations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oviva")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="game over/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="game over/Ir a Inicio" to="." method="_on_ir_a_inicio_pressed"]

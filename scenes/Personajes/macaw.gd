@@ -9,6 +9,7 @@ extends Area2D
 var jugador = null           # Referencia al jugador
 var tiempo = 0.0             # Temporizador para cambiar de dirección
 var posicion_objetivo = Vector2.ZERO            # Posición aleatoria alrededor del jugador a la que el ave se moverá
+var move = true
 
 func _ready():
 	# Esperamos un par de frames para asegurarnos que el jugador ya está instanciado
@@ -30,20 +31,21 @@ func _process(delta):
 		return  # No perseguimos si no hay jugador
 	
 	tiempo -= delta
-	if tiempo <= 0:
-		calcular_posicion_objetivo()          # Calculamos una nueva posición objetivo aleatoria cerca del jugador
-		tiempo = cambio_direccion_intervalo   # Reiniciamos el temporizador
-	# Movimiento del ave hacia la posición objetivo
-	var direccion = posicion_objetivo - global_position
+	if move == true:
+		if tiempo <= 0:
+			calcular_posicion_objetivo()          # Calculamos una nueva posición objetivo aleatoria cerca del jugador
+			tiempo = cambio_direccion_intervalo   # Reiniciamos el temporizador
+		# Movimiento del ave hacia la posición objetivo
+		var direccion = posicion_objetivo - global_position
 
-	if direccion.length() > distancia_minima:
-		global_position += direccion.normalized() * speed * delta
-	# Solo se mueve si está lo suficientemente lejos, así evitamos el "temblor" cuando está muy cerca
-	
-	# Volteamos el sprite para que mire hacia el jugador
-	if jugador != null:
-		$Sprite2D.flip_h = jugador.global_position.x < global_position.x
-	
+		if direccion.length() > distancia_minima:
+			global_position += direccion.normalized() * speed * delta
+		# Solo se mueve si está lo suficientemente lejos, así evitamos el "temblor" cuando está muy cerca
+		
+		# Volteamos el sprite para que mire hacia el jugador
+		if jugador != null:
+			$Sprite2D.flip_h = jugador.global_position.x < global_position.x
+		
 	
 func calcular_posicion_objetivo():
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cyapojbo03aah"]
+[gd_scene load_steps=36 format=4 uid="uid://cyapojbo03aah"]
 
 [ext_resource type="Script" path="res://Scripts/nivel_1.gd" id="1_56jrm"]
 [ext_resource type="Texture2D" uid="uid://byv56good7in4" path="res://recursos/images/fondos/Clouds/Clouds 2/1.png" id="1_dwuxx"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://coo1xkgkjpvc7" path="res://recursos/images/fondos/Clouds/Clouds 2/3.png" id="3_tihmh"]
 [ext_resource type="Texture2D" uid="uid://cxovpjjms4rjf" path="res://recursos/images/fondos/tilesetsand.png" id="4_01h55"]
 [ext_resource type="PackedScene" uid="uid://ce0jcyv6mit6x" path="res://scenes/transicion.tscn" id="9_xeu8t"]
-[ext_resource type="FontFile" uid="uid://ci26yaceyo6te" path="res://recursos/fuentes/ElegantLady-d9pPV.otf" id="10_4xd7i"]
+[ext_resource type="FontFile" uid="uid://bhbif6yu8rwv1" path="res://recursos/fuentes/Elegant-Z1Km.ttf" id="11_ja7no"]
+[ext_resource type="FontFile" uid="uid://tt7cy7nnrery" path="res://recursos/fuentes/TravelelegantLight-RpwMV.otf" id="11_po5d3"]
+[ext_resource type="FontFile" uid="uid://due24met2t0g4" path="res://recursos/fuentes/TravelelegantBold-nRaKV.otf" id="11_xuqru"]
+[ext_resource type="PackedScene" uid="uid://c0swsqchro41k" path="res://scenes/Personajes/trash.tscn" id="13_328ku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm5dh"]
 texture = ExtResource("1_juvqf")
@@ -1479,16 +1482,45 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t1hwh")
 
 [sub_resource type="LabelSettings" id="LabelSettings_0kchr"]
-font = ExtResource("10_4xd7i")
+font = ExtResource("11_po5d3")
 font_size = 70
 font_color = Color(0.677219, 0.0969151, 0.109664, 1)
-outline_size = 15
+outline_size = 5
 outline_color = Color(0.678431, 0.0980392, 0.109804, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1258k"]
-font = ExtResource("10_4xd7i")
+font = ExtResource("11_ja7no")
+font_size = 60
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7hog"]
+font = ExtResource("11_po5d3")
 font_size = 70
 outline_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2bo1"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr2ls"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_lyha2"]
+resource_name = "Derrota definitiva"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/bgrect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667)]
+}
 
 [sub_resource type="Animation" id="Animation_gt787"]
 length = 0.001
@@ -1528,6 +1560,86 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("game over/bgrect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("game over/Victoria:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7nn04"]
+resource_name = "VICTORIA"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/Victoria:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game over/intentos:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game over/bgrect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3q8vi"]
+resource_name = "Victoria definitiva"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game over/bgrect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.866667)]
+}
 
 [sub_resource type="Animation" id="Animation_txiv7"]
 resource_name = "derrota"
@@ -1554,7 +1666,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.865)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1611,7 +1723,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oviva"]
 _data = {
+"Derrota definitiva": SubResource("Animation_lyha2"),
 "RESET": SubResource("Animation_gt787"),
+"VICTORIA": SubResource("Animation_7nn04"),
+"Victoria definitiva": SubResource("Animation_3q8vi"),
 "derrota": SubResource("Animation_txiv7"),
 "derrota afuera": SubResource("Animation_5f7m3")
 }
@@ -1667,8 +1782,9 @@ tile_set = SubResource("TileSet_nrap7")
 [node name="Jugador" parent="." instance=ExtResource("3_7hkb2")]
 position = Vector2(-5, 577)
 
+[node name="trash" parent="." instance=ExtResource("13_328ku")]
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true
 
 [node name="salida" parent="." instance=ExtResource("9_xeu8t")]
@@ -1698,12 +1814,51 @@ label_settings = SubResource("LabelSettings_0kchr")
 
 [node name="intentos" type="Label" parent="game over"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 303.0
-offset_top = 312.0
-offset_right = 842.0
-offset_bottom = 405.0
+offset_left = 127.0
+offset_top = 272.0
+offset_right = 1037.0
+offset_bottom = 469.0
 label_settings = SubResource("LabelSettings_1258k")
 horizontal_alignment = 1
+
+[node name="Victoria" type="Label" parent="game over"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 137.0
+offset_right = 948.0
+offset_bottom = 269.0
+text = "¡HAZ  GANADO !"
+label_settings = SubResource("LabelSettings_f7hog")
+
+[node name="Continuar" type="Button" parent="game over"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_left = 480.0
+offset_top = 480.0
+offset_right = 592.448
+offset_bottom = 488.248
+theme_override_colors/font_pressed_color = Color(0.355314, 0.355314, 0.355314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_xuqru")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k2bo1")
+text = "CONTINUAR"
+
+[node name="Ir a Inicio" type="Button" parent="game over"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.076
+anchor_bottom = 0.049
+offset_left = 432.0
+offset_top = 536.0
+offset_right = 634.448
+offset_bottom = 544.248
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_xuqru")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lr2ls")
+text = " VOLVER A INICIO"
 
 [node name="stop" type="Timer" parent="."]
 wait_time = 5.0
@@ -1718,3 +1873,5 @@ wait_time = 1.5
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="game over/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="game over/Ir a Inicio" to="." method="_on_ir_a_inicio_pressed"]

@@ -41,3 +41,8 @@ func mostrar_texto():
 func esperar_input():
 	while not Input.is_action_just_pressed("ui_accept"):
 		await get_tree().physics_frame # Esperar un frame
+
+
+
+func _on_saltar_pressed():
+	get_tree().change_scene_to_file("res://scenes/Mapas/nivel_1.tscn")
